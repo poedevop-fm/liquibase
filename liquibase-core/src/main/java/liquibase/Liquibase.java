@@ -176,10 +176,13 @@ public class Liquibase {
      * To run in "no context mode", pass a null or empty context object.
      */
     public void update(Contexts contexts) throws LiquibaseException {
-        update(contexts, new LabelExpression());
+        update(contexts, new LabelExpression(), true);
     }
 
     public void update(Contexts contexts, LabelExpression labelExpression) throws LiquibaseException {
+    	update(contexts, labelExpression, true);
+    }
+    public void update(Contexts contexts, LabelExpression labelExpression, boolean checkLiquibaseTables) throws LiquibaseException {
         LockService lockService = LockServiceFactory.getInstance().getLockService(database);
         lockService.waitForLock();
 
@@ -189,7 +192,9 @@ public class Liquibase {
         try {
             DatabaseChangeLog changeLog = getDatabaseChangeLog();
 
-            checkLiquibaseTables(true, changeLog, contexts, labelExpression);
+            if (checkLiquibaseTables) {
+                checkLiquibaseTables(true, changeLog, contexts, labelExpression);
+            }
 
             changeLog.validate(database, contexts, labelExpression);
 
@@ -235,10 +240,14 @@ public class Liquibase {
     }
 
     public void update(Contexts contexts, Writer output) throws LiquibaseException {
-        update(contexts, new LabelExpression(), output);
+        update(contexts, new LabelExpression(), output, true);
     }
 
     public void update(Contexts contexts, LabelExpression labelExpression, Writer output) throws LiquibaseException {
+        update(contexts, labelExpression, output, true);	
+    }
+    
+    public void update(Contexts contexts, LabelExpression labelExpression, Writer output, boolean checkLiquibaseTables) throws LiquibaseException {
         changeLogParameters.setContexts(contexts);
         changeLogParameters.setLabels(labelExpression);
 
@@ -253,7 +262,7 @@ public class Liquibase {
 
         try {
 
-            update(contexts, labelExpression);
+            update(contexts, labelExpression, checkLiquibaseTables);
 
             output.flush();
         } catch (IOException e) {
