@@ -19,7 +19,7 @@
       liquibase-parent
     </artifactId>
     <version>
-      3.5.1044
+      3.5.90000
     </version>
   </parent>
   <properties>
