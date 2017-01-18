@@ -1,3 +1,7 @@
+079dadf Prevent potential null pointer exceptions
+1a82383 Testing travis-ci
+1d3368c Testing travis-ci
+f5d6307 Test travis.yml file
 d463a11 CORE-2970 MSSQL: Support default value constraint names
 6d8462e CORE-2970 MSSQL: Support default value constraint names
 c2cec79 Merge branch 'ddb' of https://github.com/Datical/liquibase into ddb
