@@ -1,7 +1,11 @@
+3d33b70 Merge tag 'tags/2017-01-17_Sprint_4.13_Ver_4.13.3669' into ddb-hotfix
+302a1b0 Prep for build 3.5.1073
 079dadf Prevent potential null pointer exceptions
+377ea60 Merge tag 'tags/2017-01-04_Sprint_4.12_Ver_4.12.3645' into ddb-hotfix
 1a82383 Testing travis-ci
 1d3368c Testing travis-ci
 f5d6307 Test travis.yml file
+d0db4e2 Prep for build 3.5.1072
 d463a11 CORE-2970 MSSQL: Support default value constraint names
 6d8462e CORE-2970 MSSQL: Support default value constraint names
 c2cec79 Merge branch 'ddb' of https://github.com/Datical/liquibase into ddb
@@ -12,6 +16,8 @@ ba65a52 Improve createView extensibility
 490f040 Improve createView extensibility
 d716a98 Include editioning view in Oracle Snapshot
 0b7fc3f Improve sqlserver dependency query
+694f0aa Merge tag 'tags/2016-12-12_Sprint_4.11_Ver_4.11.3609' into ddb-hotfix
+fc9f94c Prep for build 3.5.1061
 50a1eeb Improve sqlserver index snapshot query
 6233d1d Improve sqlserver index snapshot query
 22a8c99 Improve sqlserver index snapshot query
