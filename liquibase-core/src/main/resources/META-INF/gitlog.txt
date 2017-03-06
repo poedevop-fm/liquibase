@@ -1,3 +1,11 @@
+4059b94 CORE-3015 Oracle: diffChangeLog TIMESTAMP WITH LOCAL TIME ZONE correctly
+1fdf692 Oracle snapshot unique constraint performance improvements and better multi-schema support
+4d12daf Oracle snapshot index performance improvements and better multi-schema support
+a4ac390 Include constrantName in add default value statement
+25e1601 MSSQL cannot modify a column datatype if there is a default value on it
+8b6237f Add extension point to check for errors in command output
+32879cc Handle classes when a the type of default value changes between snapshots
+ba1fe03 Ensure generated id is 6 digits to avoid random out of bounds exception
 4bdeb1c CORE-2985 MSSQL Snapshot performance improvements
 8cd816a Remove backingIndexes for unique constraints and FKs
 c8a225b CORE-2985 MSSQL Snapshot performance improvements

@@ -276,12 +276,13 @@ public class JdbcDatabaseSnapshot extends DatabaseSnapshot {
                                         "CASE I.UNIQUENESS WHEN 'UNIQUE' THEN 0 ELSE 1 END AS NON_UNIQUE, " +
                                         "CASE c.DESCEND WHEN 'Y' THEN 'D' WHEN 'N' THEN 'A' END AS ASC_OR_DESC " +
                                         "FROM ALL_IND_COLUMNS c " +
-                                        "JOIN ALL_INDEXES i ON (i.index_name = c.index_name and i.table_owner = c.table_owner)" +
-                                        "LEFT JOIN " + (((OracleDatabase) database).canAccessDbaRecycleBin() ? "dba_recyclebin" : "user_recyclebin") + " d ON d.object_name=c.table_name " +
-                                        "LEFT JOIN all_ind_expressions e ON e.column_position = c.column_position AND e.index_name = c.index_name " +
+                                        "JOIN ALL_INDEXES i ON i.owner=c.index_owner AND i.index_name = c.index_name and i.table_owner = c.table_owner " +
+                                        "LEFT OUTER JOIN all_ind_expressions e ON e.index_owner=c.index_owner AND e.index_name = c.index_name AND e.column_position = c.column_position   " +
+                                        "LEFT OUTER JOIN " + (((OracleDatabase) database).canAccessDbaRecycleBin() ? "dba_recyclebin" : "user_recyclebin") + " d ON d.object_name=c.table_name " +
                                         "WHERE c.TABLE_OWNER = '" + database.correctObjectName(catalogAndSchema.getCatalogName(), Schema.class) + "' " +
-                                        "AND d.object_name IS NULL " +
-                                        "AND i.OWNER = c.TABLE_OWNER";
+                                        "AND i.OWNER = c.TABLE_OWNER " +
+                                        "AND d.object_name IS NULL ";
+
 
                         if (!bulkFetch && tableName != null) {
                             sql += " AND c.TABLE_NAME='" + tableName + "'";
@@ -1032,8 +1033,8 @@ public class JdbcDatabaseSnapshot extends DatabaseSnapshot {
 
                         sql = "select uc.constraint_name, uc.table_name,uc.status,uc.deferrable,uc.deferred,ui.tablespace_name, ui.index_name, ui.owner as INDEX_CATALOG " +
                                 "from all_constraints uc " +
-                                "join all_indexes ui on uc.index_name = ui.index_name and uc.owner=ui.table_owner " +
-                                "LEFT JOIN " + (((OracleDatabase) database).canAccessDbaRecycleBin() ? "dba_recyclebin" : "user_recyclebin") + " d ON d.object_name=ui.table_name " +
+                                "join all_indexes ui on uc.index_name = ui.index_name and uc.owner=ui.table_owner and uc.table_name=ui.table_name " +
+                                "LEFT OUTER JOIN " + (((OracleDatabase) database).canAccessDbaRecycleBin() ? "dba_recyclebin" : "user_recyclebin") + " d ON d.object_name=ui.table_name " +
                                 "where uc.constraint_type='U' " +
                                 "and uc.owner = '" + jdbcSchemaName + "'" +
                                 "AND d.object_name IS NULL ";
