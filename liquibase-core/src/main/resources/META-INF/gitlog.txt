@@ -1,3 +1,19 @@
+4bdeb1c CORE-2985 MSSQL Snapshot performance improvements
+8cd816a Remove backingIndexes for unique constraints and FKs
+c8a225b CORE-2985 MSSQL Snapshot performance improvements
+15f7598 CORE-2985 MSSQL Snapshot performance improvements
+b7256e3 CORE-2985 MSSQL Snapshot performance improvements
+6663211 Modified query to return table schema name as TABLE_SCHEM, not TABLE_OWNER
+cee6f9a CORE-2985 MSSQL Snapshot performance improvements
+cee76c2 Testing Circle CI
+2f1bfaf Testing Circle CI
+06767c5 Testing Circle CI
+dcea8d4 Testing Circle CI
+e1ab43e Testing Circle CI
+4f6ddca Testing Circle CI
+fa87bef Testing Circle CI
+ce2ee13 Testing Circle CI
+56e906e Improve unique constraint extensibility
 079dadf Prevent potential null pointer exceptions
 1a82383 Testing travis-ci
 1d3368c Testing travis-ci
