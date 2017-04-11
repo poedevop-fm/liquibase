@@ -1,3 +1,5 @@
+99a7096 CORE-3018 Oracle: support remarks on createView
+9be2f15 CORE-3017 Add path attribute to createView
 4059b94 CORE-3015 Oracle: diffChangeLog TIMESTAMP WITH LOCAL TIME ZONE correctly
 1fdf692 Oracle snapshot unique constraint performance improvements and better multi-schema support
 4d12daf Oracle snapshot index performance improvements and better multi-schema support
