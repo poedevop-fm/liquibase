@@ -1,3 +1,12 @@
+012b0c7 DVONE-3947 Liquibase: Snapshot: Invalid XML character during changelog snapshot
+2e95207 CORE-3045 Support indexes on views - unique+clustered indexes must be made before non-clustered/non-unique indexes
+330cfaf Invalid XML character during changelog snapshot -- Support more tab options
+7c160d5 Invalid XML character during changelog snapshot -- Support more tab options
+c7cf411 CORE-3045 Support indexes on views - use correct type in snapshot
+d7195d0 Invalid XML character during changelog snapshot -- improve error message
+6ddd845 CORE-3045 Support indexes on views
+61254b8 Invalid XML character during changelog snapshot
+02a436e Renamed throwExceptionIfError() to be more general-purpose
 99a7096 CORE-3018 Oracle: support remarks on createView
 9be2f15 CORE-3017 Add path attribute to createView
 4059b94 CORE-3015 Oracle: diffChangeLog TIMESTAMP WITH LOCAL TIME ZONE correctly
