@@ -1,3 +1,6 @@
+0136275 Merge branch 'ddb' of https://github.com/Datical/liquibase into ddb
+433bb9a Fix equals() logic: Don't assume objects are the same if schemas are the same
+23c4db6 Merge branch 'ddb' of github.com:Datical/liquibase into ddb
 012b0c7 DVONE-3947 Liquibase: Snapshot: Invalid XML character during changelog snapshot
 2e95207 CORE-3045 Support indexes on views - unique+clustered indexes must be made before non-clustered/non-unique indexes
 330cfaf Invalid XML character during changelog snapshot -- Support more tab options
