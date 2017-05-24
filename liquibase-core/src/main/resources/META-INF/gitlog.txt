@@ -1,3 +1,4 @@
+9253aff DVONE-4440 Filter out SYS_FBA tables
 0136275 Merge branch 'ddb' of https://github.com/Datical/liquibase into ddb
 433bb9a Fix equals() logic: Don't assume objects are the same if schemas are the same
 23c4db6 Merge branch 'ddb' of github.com:Datical/liquibase into ddb
