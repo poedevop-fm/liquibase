@@ -281,6 +281,8 @@ public class DatabaseChangeLog implements Comparable<DatabaseChangeLog>, Conditi
         for (ParsedNode childNode : parsedNode.getChildren()) {
             handleChildNode(childNode, resourceAccessor);
         }
+
+        new ThreadedChecksumGenerator().generateChecksums(changeSets);
     }
 
     protected void expandExpressions(ParsedNode parsedNode) {
