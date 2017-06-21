@@ -1,6 +1,8 @@
 package liquibase.changelog;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * To improve performance when calculating checksums for large changelogs and
@@ -11,10 +13,19 @@ import java.util.List;
 public class ThreadedChecksumGenerator {
 
   public void generateChecksums(List<ChangeSet> changeSets) {
-    // naive implementation to get started with. Make sure it works. 
-    for (ChangeSet changeSet : changeSets) {
-      changeSet.generateCheckSum();
+
+    int nThreads = Runtime.getRuntime().availableProcessors();
+    ExecutorService exec = Executors.newFixedThreadPool(nThreads);
+
+    for (final ChangeSet changeSet : changeSets) {
+      exec.submit(new Runnable() {
+        @Override
+        public void run() {
+          changeSet.generateCheckSum();
+        }
+      });
     }
+    exec.shutdown();
   }
 
 }
