@@ -1,3 +1,16 @@
+14d3080 Do not log error stream if it is empty
+1f2ac9f Cherry picked oracle auto-increment support from master
+7aea763 CORE-3072 Add usePreparedStatements="true|false" flag to loadData (don't default usePreparedStatements)
+5ff8d06 CORE-3072 Add usePreparedStatements="true|false" flag to loadData (fixed attribute name to be plural)
+ca8854d CORE-3072 Add usePreparedStatements="true|false" flag to loadData
+3c1ff3b CORE-3069 Checksum: line endings not standardized on windows if multiple
+4714f1a Merge branch 'ddb' of https://github.com/Datical/liquibase into ddb
+8c89a8b Snapshot performance: bugfixes for non-oracle regression
+1434b5b Fixed replaces() logic to use equals instead of isAssignableFrom
+8993f87 Snapshot performance: better detection of bulk queries
+c68db68 Allow string->list property conversions
+33dbe98 Snapshot performance: don't pull down columns for oracle-system tables, and support fetching all objects across schemas in one query
+34b2958 Snapshot performance: better detection of bulk queries
 9253aff DVONE-4440 Filter out SYS_FBA tables
 0136275 Merge branch 'ddb' of https://github.com/Datical/liquibase into ddb
 433bb9a Fix equals() logic: Don't assume objects are the same if schemas are the same
